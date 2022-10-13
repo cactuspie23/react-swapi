@@ -8,7 +8,7 @@ function App() {
     <>
       <Routes>
         <Route path='/' element={<StarshipList/>} />
-        <Route path='/starship' element={<StarshipDetails/>} />
+        <Route path='/starships' element={<StarshipDetails/>} />
       </Routes>
     </>
   );
