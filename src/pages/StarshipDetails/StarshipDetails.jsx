@@ -6,29 +6,28 @@ import { Link } from "react-router-dom";
 const StarshipDetails = () => {
   const [starshipDetails, setStarshipDetails] = useState({})
   const location = useLocation()
-  console.log(location.state.starship.url)
+
   useEffect(() => {
     const fetchStarshipDetails = async () => {
       const starshipData = await getDetails(location.state.starship.url)
       setStarshipDetails(starshipData)
     }
     fetchStarshipDetails()
-  }, [])
-  console.log(starshipDetails)
+  }, [location.state.starship.url])
+
 
   return (
-    <>
-      <h1>Starship Details</h1>
+    <div className="detail-container">
       {starshipDetails.name ? 
-        <>
+        <div className='info-container'>
           <h3>NAME: {starshipDetails.name}</h3>
           <h3>MODEL: {starshipDetails.model}</h3>
           <Link to='/'>RETURN</Link>
-        </> 
+        </div> 
         : 
         <p>Lodaing details...</p>
       }
-    </>
+    </div>
   );
 }
 

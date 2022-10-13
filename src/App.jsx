@@ -5,12 +5,12 @@ import StarshipDetails from './pages/StarshipDetails/StarshipDetails';
 
 function App() {
   return (
-    <>
+    <div className='app'>
       <Routes>
         <Route path='/' element={<StarshipList/>} />
         <Route path='/starships' element={<StarshipDetails/>} />
       </Routes>
-    </>
+    </div>
   );
 }
 
